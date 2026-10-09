@@ -24,7 +24,7 @@
             BİLGİSAYAR MÜHENDİSİ
         </div>
         <div class="institution">
-            T.C. Çerkezköy Belediyesi <br> Bilgi İşlem Müdürlüğü
+            T.C. Çerkezköy Belediye Başkanlığı <br> Bilgi İşlem Müdürlüğü
         </div>
     </section>
     <section class="contact-section">
@@ -58,5 +58,53 @@
         </div>
     </section>
 </main>
+<div class="top-actions">
+    <a class="action-btn" href="vcard/vcard.vcf" download="vcard.vcf" aria-label="Rehbere Kaydet" title="Rehbere Kaydet">
+        <i class="fa-solid fa-user-plus"></i>
+    </a>
+    <button class="action-btn" id="openShareModal" aria-label="Paylaş" title="Paylaş">
+        <i class="fa-solid fa-share-nodes"></i>
+    </button>
+</div>
+<div class="modal-overlay" id="shareModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeShareModal" aria-label="Kapat">&times;</button> 
+        <h2 class="modal-title">Paylaş</h2>
+        <div class="qr-container">
+            <img src="vcard/vcard.png" alt="vCard QR Kod">
+        </div>
+        <div class="share-grid">
+            <a class="share-grid-item" id="waShare" href="#" target="_blank" rel="noopener">
+                <div class="share-icon wa">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <span>WhatsApp</span>
+            </a>
+            <a class="share-grid-item" id="smsShare" href="#">
+                <div class="share-icon sms">
+                    <i class="fa-solid fa-comment-sms"></i>
+                </div>
+                <span>SMS</span>
+            </a>
+            <a class="share-grid-item" id="tgShare" href="#" target="_blank" rel="noopener">
+                <div class="share-icon tg">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+                <span>Telegram</span>
+            </a>
+            <a class="share-grid-item" id="mailShare" href="#">
+                <div class="share-icon mail">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <span>E-posta</span>
+            </a>
+        </div>
+        <button class="copy-link-btn" id="copyLinkBtn">
+            <i class="fa-regular fa-copy"></i>
+            <span id="copyBtnText">Bağlantıyı Kopyala</span>
+        </button>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
