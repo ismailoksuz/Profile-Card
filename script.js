@@ -55,3 +55,10 @@ copyBtn.addEventListener('click', () => {
         setTimeout(() => copyText.textContent = 'Bağlantıyı Kopyala', 2000);
     });
 });
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 2200);
+});
