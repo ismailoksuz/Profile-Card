@@ -1,3 +1,12 @@
+/* Manrope (SIL OFL 1.1) - siteyle birlikte gelir, internet gerekmez */
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url("assets/fonts/Manrope-var.woff") format("woff");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -279,6 +288,15 @@ body {
         transform .2s ease,
         background .2s ease;
 }
+/* Sayfaya gömülü SVG ikonlar: rengi yazının rengini (currentColor) alır */
+.ico {
+    display: inline-block;
+    flex: none;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
 .contact-item:hover .icon {
     transform: translateY(-2px);
     background: #ffffff;

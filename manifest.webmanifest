@@ -1,0 +1,25 @@
+{
+  "name": "İsmail ÖKSÜZ | Dijital Kartvizit",
+  "short_name": "İsmail ÖKSÜZ",
+  "description": "Bilgisayar Mühendisi - T.C. Çerkezköy Belediye Başkanlığı Bilgi İşlem Müdürlüğü",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14212c",
+  "theme_color": "#f4f1ed",
+  "icons": [
+    { "src": "assets/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "QR ile rehbere kaydet",
+      "short_name": "QR",
+      "url": "./#qr",
+      "icons": [ { "src": "assets/app/icon-192.png", "sizes": "192x192", "type": "image/png" } ]
+    }
+  ]
+}

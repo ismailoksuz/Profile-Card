@@ -29,10 +29,9 @@ let animFrame = null;
 
 /* --- İçerik hazır mı? (yazı tipleri, ikon fontu, görseller) --- */
 const FONT_CHECKS = [
-    ['500 16px Manrope', 'İşğÖÜ abc'],
-    ['900 16px "Font Awesome 6 Free"', ' '],
-    ['400 16px "Font Awesome 6 Free"', ' ']
+    ['500 16px Manrope', 'İşğÖÜ abc']
 ];
+
 const LOAD_TIMEOUT = 8000; // hiçbir şey sonsuza dek halkada kalmasın
 
 function fontsReady() {
@@ -185,3 +184,10 @@ window.addEventListener('load', () => {
     pages.forEach(checkPage);
     if (startPage && currentPage === startPage) goToPage(startPage, true);
 });
+
+/* ---------- Uygulama (PWA): service worker kaydı ---------- */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+}
