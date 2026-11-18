@@ -1,9 +1,24 @@
-window.addEventListener('load', () => {
+/* ---------- Açılış ekranı (fotoğraflı halka) ---------- */
+// Her şeyin yüklenmesini beklemez: halka en az LOADER_MIN ms görünür,
+// fotoğraf geç gelirse en fazla LOADER_MAX ms beklenir.
+// Hazır olmayan içerik varsa sayfanın kendi halkası devralır.
+const LOADER_MIN = 1400;
+const LOADER_MAX = 3000;
+(function () {
     const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-    }, 2200);
-});
+    const photo = loader.querySelector('img');
+    const photoReady = new Promise((resolve) => {
+        if (photo.complete) return resolve();
+        photo.addEventListener('load', resolve, { once: true });
+        photo.addEventListener('error', resolve, { once: true });
+    });
+    const cap = new Promise((resolve) => setTimeout(resolve, LOADER_MAX));
+    Promise.race([photoReady, cap]).then(() => {
+        const wait = Math.max(0, LOADER_MIN - performance.now());
+        setTimeout(() => loader.classList.add('hidden'), wait);
+    });
+})();
+
 /* ---------- Sayfalar arası geçiş: İletişim <-> QR ---------- */
 const pager = document.getElementById('pager');
 const pages = Array.from(pager.querySelectorAll('.page'));
