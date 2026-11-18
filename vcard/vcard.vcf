@@ -1,6 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
-N;CHARSET=UTF-8:ÖKSÜZ;İsmail;;;
-FN;CHARSET=UTF-8:İsmail ÖKSÜZ
-TEL;TYPE=CELL,VOICE:+905382342550
+N:ÖKSÜZ;İsmail;;;
+FN:İsmail ÖKSÜZ
+ORG:T.C. Çerkezköy Belediye Başkanlığı;Bilgi İşlem Müdürlüğü
+TITLE:Bilgisayar Mühendisi
+TEL;TYPE=CELL:+905382342550
+EMAIL;TYPE=INTERNET:ismail.oksuz@cerkezkoy.bel.tr
 END:VCARD

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>if (location.hash === '#qr') document.documentElement.classList.add('qr-direct');</script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,102 +21,113 @@
     <div class="loader-name">İsmail ÖKSÜZ</div>
 </div>
 <main class="card">
-    <section class="profile-section">
-        <div class="photo-wrapper">
-            <img class="photo" src="https://avatars.githubusercontent.com/u/46068969?v=4" alt="İsmail ÖKSÜZ">
-        </div>
-        <h1 class="name">
-            İsmail ÖKSÜZ
-        </h1>
-        <div class="title">
-            BİLGİSAYAR MÜHENDİSİ
-        </div>
-        <div class="institution">
-            T.C. Çerkezköy Belediye Başkanlığı <br> Bilgi İşlem Müdürlüğü
-        </div>
-    </section>
-    <section class="contact-section">
-        <div class="contact-list">
-            <a class="contact-item" href="tel:+905382342550" aria-label="İsmail Öksüz'ü ara">
-                <div class="icon">
-                    <i class="fa-solid fa-phone"></i>
+    <div class="pager" id="pager">
+
+        <!-- 1. SAYFA: İletişim (vatandaş QR ile gelince bu açılır) -->
+        <section class="page page-contact" aria-label="İletişim bilgileri">
+            <div class="profile-section">
+                <div class="photo-wrapper">
+                    <img class="photo" src="https://avatars.githubusercontent.com/u/46068969?v=4" alt="İsmail ÖKSÜZ">
                 </div>
-                <div class="contact-content">
-                    <span class="contact-label">
-                        TELEFON
-                    </span>
-                    <span class="contact-value">
-                        +90 538 234 25 50
-                    </span>
+                <h1 class="name">
+                    İsmail ÖKSÜZ
+                </h1>
+                <div class="title">
+                    BİLGİSAYAR MÜHENDİSİ
                 </div>
-            </a>
-            <a class="contact-item" href="mailto:ismail.oksuz@cerkezkoy.bel.tr" aria-label="İsmail Öksüz'e e-posta gönder">
-                <div class="icon">
-                    <i class="fa-regular fa-envelope"></i>
+                <div class="institution">
+                    <span>T.C. Çerkezköy Belediye Başkanlığı <br> Bilgi İşlem Müdürlüğü</span>
                 </div>
-                <div class="contact-content">
-                    <span class="contact-label">
-                        E-POSTA
-                    </span>
-                    <span class="contact-value">
-                        ismail.oksuz@cerkezkoy.bel.tr
-                    </span>
+            </div>
+            <div class="contact-section">
+                <div class="contact-list">
+                    <a class="contact-item" href="tel:+905382342550" aria-label="İsmail Öksüz'ü ara">
+                        <div class="icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-content">
+                            <span class="contact-label">
+                                TELEFON
+                            </span>
+                            <span class="contact-value">
+                                +90 538 234 25 50
+                            </span>
+                        </div>
+                    </a>
+                    <a class="contact-item" href="mailto:ismail.oksuz@cerkezkoy.bel.tr" aria-label="İsmail Öksüz'e e-posta gönder">
+                        <div class="icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div class="contact-content">
+                            <span class="contact-label">
+                                E-POSTA
+                            </span>
+                            <span class="contact-value">
+                                ismail.oksuz@cerkezkoy.bel.tr
+                            </span>
+                        </div>
+                    </a>
+                    <a class="contact-item" href="https://ismailoksuz.github.io/" target="_blank" rel="noopener" aria-label="Portfolyo sitesini aç">
+                        <div class="icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="contact-content">
+                            <span class="contact-label">
+                                PORTFOLYO
+                            </span>
+                            <span class="contact-value">
+                                ismailoksuz.github.io
+                            </span>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    </section>
-</main>
-<div class="top-actions">
-    <a class="action-btn" href="vcard/vcard.vcf" download="vcard.vcf" aria-label="Rehbere Kaydet" title="Rehbere Kaydet">
-        <i class="fa-solid fa-user-plus"></i>
-    </a>
-    <button class="action-btn" id="openShareModal" aria-label="Paylaş" title="Paylaş">
-        <i class="fa-solid fa-share-nodes"></i>
-    </button>
-</div>
-<a class="portfolio-btn" href="https://ismailoksuz.github.io/ismail-oksuz/" target="_blank" rel="noopener" aria-label="Portfolyo" title="Portfolyo">
-    <i class="fa-solid fa-microchip"></i>
-    <span>Portfolyo</span>
-</a>
-<div class="modal-overlay" id="shareModal">
-    <div class="modal-content">
-        <button class="modal-close" id="closeShareModal" aria-label="Kapat">&times;</button> 
-        <h2 class="modal-title">Paylaş</h2>
-        <div class="qr-container">
-            <img src="vcard/vcard.png" alt="vCard QR Kod">
-        </div>
-        <div class="share-grid">
-            <a class="share-grid-item" id="waShare" href="#" target="_blank" rel="noopener">
-                <div class="share-icon wa">
-                    <i class="fa-brands fa-whatsapp"></i>
+                <div class="contact-actions">
+                    <a class="btn btn-primary" href="vcard/vcard.vcf" download="ismail-oksuz.vcf">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Rehbere Kaydet</span>
+                    </a>
+                    <button class="btn btn-ghost" type="button" data-go="1" aria-label="QR kodu göster">
+                        <i class="fa-solid fa-qrcode"></i>
+                        <span>QR</span>
+                        <i class="fa-solid fa-chevron-right btn-arrow"></i>
+                    </button>
                 </div>
-                <span>WhatsApp</span>
-            </a>
-            <a class="share-grid-item" id="smsShare" href="#">
-                <div class="share-icon sms">
-                    <i class="fa-solid fa-comment-sms"></i>
+            </div>
+
+            <div class="page-loader" aria-hidden="true"><span class="page-loader-ring"></span></div>
+        </section>
+
+        <!-- 2. SAYFA: QR (elden uzatınca / link sonuna #qr eklenince) -->
+        <section class="page page-qr" aria-label="QR ile rehbere kaydet">
+            <div class="profile-section">
+                <div class="photo-wrapper">
+                    <img class="photo" src="https://avatars.githubusercontent.com/u/46068969?v=4" alt="">
                 </div>
-                <span>SMS</span>
-            </a>
-            <a class="share-grid-item" id="tgShare" href="#" target="_blank" rel="noopener">
-                <div class="share-icon tg">
-                    <i class="fa-brands fa-telegram"></i>
+                <div class="name">
+                    İsmail ÖKSÜZ
                 </div>
-                <span>Telegram</span>
-            </a>
-            <a class="share-grid-item" id="mailShare" href="#">
-                <div class="share-icon mail">
-                    <i class="fa-regular fa-envelope"></i>
+                <div class="title">
+                    BİLGİSAYAR MÜHENDİSİ
                 </div>
-                <span>E-posta</span>
-            </a>
-        </div>
-        <button class="copy-link-btn" id="copyLinkBtn">
-            <i class="fa-regular fa-copy"></i>
-            <span id="copyBtnText">Bağlantıyı Kopyala</span>
-        </button>
+                <div class="institution">
+                    <span>T.C. Çerkezköy Belediye Başkanlığı <br> Bilgi İşlem Müdürlüğü</span>
+                </div>
+            </div>
+            <div class="contact-section">
+                <a class="qr-card" href="vcard/vcard.vcf" download="ismail-oksuz.vcf" aria-label="Kişi kartını rehbere kaydet">
+                    <img class="qr-img" src="vcard/vcard.svg" width="300" height="300" alt="İsmail Öksüz kişi kartı QR kodu">
+                </a>
+                <button class="btn btn-ghost btn-back" type="button" data-go="0">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <span>İletişim Bilgileri</span>
+                </button>
+            </div>
+
+            <div class="page-loader" aria-hidden="true"><span class="page-loader-ring"></span></div>
+        </section>
+
     </div>
-</div>
+</main>
 <script src="script.js"></script>
 </body>
 </html>
